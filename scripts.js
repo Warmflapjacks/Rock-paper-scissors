@@ -96,7 +96,7 @@ let getRoundWinner = () => {
         return;
     }
 
-    if (playerSelection === "scissors" && computerSelection === "rock") {
+    if (playerSelection === "scissors" && computerSelection === "rock") {getPlayerPoint()
         console.log("Rock beats scissors.. You lose!");
         getComputerPoint();
         return;
@@ -134,6 +134,8 @@ let playGame = () => {
         getRoundWinner();
         getOverallScore();
     }
+    getWinnerMessage();
+
 }
 
 let getComputerPoint = () => {
@@ -145,9 +147,24 @@ let getPlayerPoint = () => {
 }
 
 let getOverallScore = () => {
+    console.log("Final scores are the following: ");
     console.log("Player Score is: " + playerWinCount);
     console.log("Computer Score is: " + computerWinCount);
+    return;
 }
 
+let getWinnerMessage = () => {
+    if (playerWinCount > computerWinCount) {
+        return console.log("Congrats!! You Win!!");
+    }
+
+    if (playerWinCount < computerWinCount) {
+        return console.log("BOOOOOOOOO. YOU LOSE.");
+    }
+
+    else {
+        return console.log("Its a tie!")
+    }
+}
 /*---Start of run program---*/
 playGame();

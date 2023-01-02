@@ -23,8 +23,11 @@
 //     Display updated win count
 
 
-/*---Function Declarations---*/
+/*---Variable Declarations---*/
+let playerSelection;
+let computerSelection;
 
+/*---Function Declarations---*/
 let getPlayerSelection = () => {
     let playerChoice = prompt("Enter your selection -- Rock, Paper or Scissors: ");   
     let caseSensitiveChoice = playerChoice.toLowerCase();
@@ -72,7 +75,47 @@ let getRandomInteger = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+let getRoundWinner = () => {
+    if (playerSelection === "rock" && computerSelection === "paper") {
+        console.log("Paper beats rock.. You lose!");
+        return;
+    }
+
+    if (playerSelection === "rock" && computerSelection === "scissors") {
+        console.log("Rock beats scissors.. You win!");
+        return;
+    }
+
+    if (playerSelection === "scissors" && computerSelection === "paper") {
+        console.log("Scissors beats paper.. You win!");
+        return;
+    }
+
+    if (playerSelection === "scissors" && computerSelection === "rock") {
+        console.log("Rock beats scissors.. You lose!");
+        return;
+    }
+
+    if (playerSelection === "paper" && computerSelection === "rock") {
+        console.log("Paper beats rock.. You win!");
+        return;
+    }
+
+    if (playerSelection === "paper" && computerSelection === "scissors") {
+        console.log("Scissors beats paper.. You lose!");
+        return;
+    }
+
+    else {
+        console.log("Its a tie!");
+        return;
+    }
+}
+
 
 /*---Start of run program---*/
-getComputerSelection();
-getPlayerSelection();
+computerSelection = getComputerSelection();
+console.log("Computer selection: " + computerSelection);
+playerSelection = getPlayerSelection();
+console.log("Player selection: " + playerSelection);
+getRoundWinner();

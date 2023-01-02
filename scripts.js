@@ -28,7 +28,31 @@
 let getPlayerSelection = () => {
     let playerChoice = prompt("Enter your selection -- Rock, Paper or Scissors: ");   
     let caseSensitiveChoice = playerChoice.toLowerCase();
-    console.log(caseSensitiveChoice);
+
+    if (inputValidation(caseSensitiveChoice)) {
+        return caseSensitiveChoice;
+    }
+    
+    else {
+        while (inputValidation(caseSensitiveChoice) === false) {
+            playerChoice = prompt("Invalid selection. Enter your selection -- Rock, Paper or Scissors: ");   
+            caseSensitiveChoice = playerChoice.toLowerCase();
+            inputValidation(caseSensitiveChoice);
+        }
+    }
+    return caseSensitiveChoice;
 };
+
+let inputValidation = (isValid) => {
+    const VALID_INPUTS = ["rock", "paper", "scissors"];
+
+    if (VALID_INPUTS.includes(isValid)) {
+        return true;
+    }
+
+    else {
+        return false;
+    }
+}
 
 getPlayerSelection();

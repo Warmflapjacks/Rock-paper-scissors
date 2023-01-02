@@ -23,7 +23,7 @@
 //     Display updated win count
 
 
-//---Play round---//
+/*---Function Declarations---*/
 
 let getPlayerSelection = () => {
     let playerChoice = prompt("Enter your selection -- Rock, Paper or Scissors: ");   
@@ -55,4 +55,24 @@ let inputValidation = (isValid) => {
     }
 }
 
+let getComputerSelection = () => {
+    let computerInteger = getRandomInteger(1,3);
+    
+    switch (computerInteger) {
+        case 1:
+            return "rock";
+        case 2:
+            return "paper";
+        case 3:
+            return "scissors";
+    }
+}
+
+let getRandomInteger = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+/*---Start of run program---*/
+getComputerSelection();
 getPlayerSelection();

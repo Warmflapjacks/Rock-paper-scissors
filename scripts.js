@@ -26,6 +26,8 @@
 /*---Variable Declarations---*/
 let playerSelection;
 let computerSelection;
+let playerWinCount = 0;
+let computerWinCount = 0;
 
 /*---Function Declarations---*/
 let getPlayerSelection = () => {
@@ -78,31 +80,37 @@ let getRandomInteger = (min, max) => {
 let getRoundWinner = () => {
     if (playerSelection === "rock" && computerSelection === "paper") {
         console.log("Paper beats rock.. You lose!");
+        getComputerPoint();
         return;
     }
 
     if (playerSelection === "rock" && computerSelection === "scissors") {
         console.log("Rock beats scissors.. You win!");
+        getPlayerPoint();
         return;
     }
 
     if (playerSelection === "scissors" && computerSelection === "paper") {
         console.log("Scissors beats paper.. You win!");
+        getPlayerPoint();
         return;
     }
 
     if (playerSelection === "scissors" && computerSelection === "rock") {
         console.log("Rock beats scissors.. You lose!");
+        getComputerPoint();
         return;
     }
 
     if (playerSelection === "paper" && computerSelection === "rock") {
         console.log("Paper beats rock.. You win!");
+        getPlayerPoint();
         return;
     }
 
     if (playerSelection === "paper" && computerSelection === "scissors") {
         console.log("Scissors beats paper.. You lose!");
+        getComputerPoint();
         return;
     }
 
@@ -112,10 +120,34 @@ let getRoundWinner = () => {
     }
 }
 
+let playGame = () => {
+    let totalRounds = prompt("How many rounds would you like to play?");
+    
+    for (let i = 1; i <= totalRounds; i++) {
+        console.log("Inside the for loop on round: " + i);
+        computerSelection = getComputerSelection();
+
+        console.log("Computer selection: " + computerSelection);
+        playerSelection = getPlayerSelection();
+
+        console.log("Player selection: " + playerSelection);
+        getRoundWinner();
+        getOverallScore();
+    }
+}
+
+let getComputerPoint = () => {
+    return computerWinCount++;
+}
+
+let getPlayerPoint = () => {
+    return playerWinCount++;
+}
+
+let getOverallScore = () => {
+    console.log("Player Score is: " + playerWinCount);
+    console.log("Computer Score is: " + computerWinCount);
+}
 
 /*---Start of run program---*/
-computerSelection = getComputerSelection();
-console.log("Computer selection: " + computerSelection);
-playerSelection = getPlayerSelection();
-console.log("Player selection: " + playerSelection);
-getRoundWinner();
+playGame();

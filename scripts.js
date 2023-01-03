@@ -135,7 +135,7 @@ let playGame = () => {
         getOverallScore();
     }
     getWinnerMessage();
-
+    playAgain();
 }
 
 let getComputerPoint = () => {
@@ -164,6 +164,19 @@ let getWinnerMessage = () => {
 
     else {
         return console.log("Its a tie!")
+    }
+}
+
+let playAgain = () => {
+    let answer = prompt("Would you like to play again? Enter Y/N: ");
+    let possibleAcceptableAns = answer.toLowerCase();
+
+    if (possibleAcceptableAns === "y") {
+        playGame();
+    }
+
+    else {
+        console.log("Thanks for playing");
     }
 }
 /*---Start of run program---*/

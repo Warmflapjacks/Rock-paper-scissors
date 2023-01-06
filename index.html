@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="scripts.js" defer></script> -->
+    <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <style> @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap'); </style>
     <title>RPS 2.0</title>
@@ -18,24 +18,25 @@
             <div class="win-conditions">
                 First to score 5 points wins the game
             </div>
+            <div class="round-winner-display"></div>
             <div class="selection-placeholders">
                 <div class="player">
                     <div class="player-selection">
                         <img src="images/light-bulb.png">
                     </div>
-                    <div class="player-score-count">Player score (JS)</div>
+                    <div class="player-score-count">Player score here (JS)</div>
                 </div>
                 <div class="computer">
                     <div class="computer-selection">
                         <img src="images/light-bulb.png">
                     </div>
-                    <div class="computer-score-count">Computer score (JS)</div>
+                    <div class="computer-score-count">Computer score here (JS)</div>
                 </div>
             </div>
             <div class="rps-buttons">
-                <button>Rock</button>
-                <button>Paper</button>
-                <button>Scissors</button>
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
             </div>
         </div>
         <footer id = "footer-container">

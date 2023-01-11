@@ -7,3 +7,5 @@ Paper: <a href="https://www.flaticon.com/free-icons/toilet-paper" title="toilet-
 Scissors: <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Freepik - Flaticon</a>
 
 Question: <a href="https://www.flaticon.com/free-icons/question" title="question icons">Question icons created by Freepik - Flaticon</a>
+
+Github Icon: <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by IconKanan - Flaticon</a>

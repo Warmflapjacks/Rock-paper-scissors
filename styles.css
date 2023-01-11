@@ -30,8 +30,8 @@ body {
 
 .win-conditions {
     color: white;
-    font-size: 26px;
-    font-weight: 500;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .selection-placeholders {
@@ -40,11 +40,12 @@ body {
     align-items: center;
     gap: 100px;
     padding: 15px;
+    margin-top: 2em;
 }
 
 .selection-placeholders img {
     height: auto;
-    width: 150px;
+    width: 300px;
 }
 
 .player, .computer {
@@ -56,18 +57,72 @@ body {
 .player-score-count, 
 .computer-score-count {
     color: white;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: bold;
+}
+
+.round-winner-display {
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.rps-buttons {
+    display: flex;
+    padding: 1em;
+    gap: 20px;
+}
+
+.button {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left:10px;
+    padding-right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #ffc144;
+    border-radius: 10px;
+    border: 5px solid black;
+    color: black;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.491);
+}
+
+.button:hover {
+    background-color: #ffc144ba;
+}
+
+.button:active {
+    box-shadow: 0 2px rgba(0, 0, 0, 0.491);
+    transform: translateY(4px);
 }
 
 #footer-container {
     color: white;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: auto;
     padding-bottom: 1rem;
+}
+
+#github {
+    height:35px;
+    width: auto;
+    transition: transform .7s ease-in-out;
+}
+
+#github:hover {
+    transform: rotate(360deg);
+}
+
+.footer-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .footer-text a:visited, footer a:link {

@@ -123,8 +123,8 @@ let getWinnerMessage = () => {
 //Acts as a final message
 let determineOverallWinner = () => {
     if (playerWinCount == 5 || computerWinCount == 5) {
-        getWinnerMessage();
         updateAllScores();
+        getWinnerMessage();
     }
 
     else {
@@ -184,5 +184,3 @@ let roundFunctionality = (displayMessage, playerSelection, computerSelection) =>
 
 /*---Start of run program---*/
 playGame();
-
-// roundFunctionality(displayMessage, playerSelection, computerSelection);
